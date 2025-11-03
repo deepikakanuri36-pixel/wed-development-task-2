@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deepika's Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #333;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 2rem;
+    }
+
+    .project {
+      background: #f4f4f4;
+      margin: 1rem 0;
+      padding: 1rem;
+      border-radius: 5px;
+    }
+
+    form input, form textarea {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 0.5rem;
+    }
+
+    form button {
+      background: #333;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      header, section, footer {
+        padding: 1rem;
+      }
+
+      nav a {
+        display: block;
+        margin: 5px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Deepika</h1>
+    <nav>
+      <a href="#about">About Me</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m a passionate web developer learning HTML, CSS, and JavaScript. I love building practical applications and solving technical challenges.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project" data-category="web">
+      <h3>To-Do List App</h3>
+      <p>A command-line Python app with file persistence.</p>
+    </div>
+    <div class="project" data-category="web">
+      <h3>Contact Form</h3>
+      <p>Responsive form with HTML, CSS, and JavaScript validation.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML & CSS</li>
+      <li>JavaScript & DOM Manipulation</li>
+      <li>Python & File Handling</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Deepika. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      const email = document.getElementById("email").value;
+      const name = document.getElementById("name").value;
+      const message = document.getElementById("message").value;
+
+      if (!email.includes("@")) {
+        alert("Please enter a valid email.");
+        e.preventDefault();
+      } else if (!name || !message) {
+        alert("Please fill out all fields.");
+        e.preventDefault();
+      } else {
+        alert("Message sent successfully!");
+      }
+    });
+  </script>
+</body>
+</html>
